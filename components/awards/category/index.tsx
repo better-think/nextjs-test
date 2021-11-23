@@ -9,9 +9,10 @@ export type CategoryData = {
 
 declare type PageProps = {
     category: CategoryData;
+    handleSelect: (item: NomineeData, id: string) => void;
 };
 
-export const Category = ({ category }: PageProps) => {
+export const Category = ({ category, handleSelect }: PageProps) => {
     const [selected, setSelected] = useState<string>('');
 
     return (
@@ -26,6 +27,7 @@ export const Category = ({ category }: PageProps) => {
                         isSelected={selected === item.id}
                         clickHandler={(item: NomineeData) => {
                             setSelected(item.id);
+                            handleSelect(item, category.id);
                         }}
                     />
                 ))
