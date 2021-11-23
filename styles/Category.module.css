@@ -1,0 +1,12 @@
+.pageCategory h3 {
+    background: #666;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    font-size: x-large;
+}
+
+.categoryContent{
+    display: flex;
+    gap: 2%;
+    flex-wrap: wrap;
+}
