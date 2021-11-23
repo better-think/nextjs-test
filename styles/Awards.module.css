@@ -79,7 +79,6 @@
 
 @media (max-width: 991px) {
     .submitBtn {
-        width: 48%;
         transform: none;
     }
 }
