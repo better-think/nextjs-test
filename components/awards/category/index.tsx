@@ -1,18 +1,30 @@
 import React from 'react';
 import styles from '../../../styles/Category.module.css';
-import { Nominee } from '../nominee';
+import { Nominee, NomineeData } from '../nominee';
 
-export const Category: React.FC = () => {
+export type CategoryData = {
+    id: string;
+    items: NomineeData[];
+};
+
+declare type PageProps = {
+    category: CategoryData;
+};
+
+export const Category = ({ category }: PageProps) => {
 
     return (
         <div className={styles.pageCategory}>
             <h3>Category title</h3>
             <div className={styles.categoryContent}>
-                <Nominee />
-                <Nominee />
-                <Nominee />
-                <Nominee />
-                <Nominee />
+            {
+                category.items.map((item: NomineeData) => (
+                    <Nominee
+                        key={`${category.id}-${item.id}`}
+                        item={item}
+                    />
+                ))
+            }            
             </div>
         </div>
     )

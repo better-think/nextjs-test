@@ -1,15 +1,24 @@
 import React from 'react';
 import styles from '../../../styles/Nominee.module.css';
 
+export type NomineeData = {
+    id: string;
+    photoUrL: string;
+    title: string;
+};
 
-export const Nominee: React.FC = () => {
+declare type PageProps = {
+    item: NomineeData;
+}
+
+export const Nominee = ({ item }: PageProps) => {
 
     return (
         <div className={`${styles.pageNominee}`}>
-            <p>NoMinee title</p>
+            <p>{ item.title }</p>
 
             <div className={styles.nomineePhoto}>
-                <img src={"https://variety.com/wp-content/uploads/2020/12/nomadland_ver2.jpg"} alt="alt" />
+                <img src={item.photoUrL} alt={item.id} />
             </div>
     
             <button className={styles.nomineeButton}>
