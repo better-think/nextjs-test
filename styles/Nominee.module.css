@@ -49,10 +49,11 @@
     border: none;
     cursor: pointer;
     padding: 10px 30px;
-    width: max-content;
     color: white;
     font-size: 24px;
     background: #999;
+    width: 100%;
+    max-width: fit-content;
 }
 .nomineeButton:hover{
     background: #34AC9C;
@@ -60,4 +61,16 @@
 }
 .nomineeButton:active {
     background-color: #229485;
+}
+
+@media (max-width: 950px) {
+    .pageNominee {
+        width: 48%;
+    }
+}
+
+@media (max-width: 350px) {
+    .pageNominee {
+        width: 100%;
+    }
 }

@@ -69,3 +69,27 @@
     background: #34AC9C;
     color: #ccc;
 }
+
+@media (max-width: 1439px) {
+    .submitBtn {
+        width: 280px;
+        padding: 20px;
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 991px) {
+    .submitBtn {
+        width: 48%;
+        transform: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .submitBtn {
+        text-align: center;
+        width: 100%;
+        font-size: 20px;
+        padding: 30px;
+    }
+}
