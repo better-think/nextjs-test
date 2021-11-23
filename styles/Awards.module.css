@@ -44,10 +44,9 @@
 }
 
 .formControl {
-    width: 100%;
-    text-align: right;
     text-align: -webkit-right;
     position: fixed;
+    right: 0;
     bottom: 0;
     padding: 10px 10px;
 }
@@ -55,7 +54,7 @@
 .submitBtn {
     display: flex;
     margin-top: auto;
-    padding: 20px 40px;
+    padding: 10px 20px;
     font-size: 32px;
     width: 430px;
     border-radius: 7px;
