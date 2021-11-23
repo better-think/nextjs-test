@@ -9,19 +9,23 @@ export type NomineeData = {
 
 declare type PageProps = {
     item: NomineeData;
+    isSelected: boolean;
+    clickHandler: (item: NomineeData) => void;
 }
 
-export const Nominee = ({ item }: PageProps) => {
+export const Nominee = ({ item, isSelected, clickHandler }: PageProps) => {
 
     return (
-        <div className={`${styles.pageNominee}`}>
+        <div className={`${styles.pageNominee} ${isSelected ? styles.active : ''}`}>
             <p>{ item.title }</p>
 
             <div className={styles.nomineePhoto}>
                 <img src={item.photoUrL} alt={item.id} />
             </div>
     
-            <button className={styles.nomineeButton}>
+            <button className={styles.nomineeButton}
+                onClick={() => clickHandler(item)}
+            >
                 Select Button
             </button>
         </div>

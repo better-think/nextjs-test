@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../../../styles/Category.module.css';
 import { Nominee, NomineeData } from '../nominee';
 
@@ -12,19 +12,24 @@ declare type PageProps = {
 };
 
 export const Category = ({ category }: PageProps) => {
+    const [selected, setSelected] = useState<string>('');
 
     return (
         <div className={styles.pageCategory}>
-            <h3>Category title</h3>
+            <h3>{category.id}</h3>
             <div className={styles.categoryContent}>
             {
                 category.items.map((item: NomineeData) => (
                     <Nominee
                         key={`${category.id}-${item.id}`}
                         item={item}
+                        isSelected={selected === item.id}
+                        clickHandler={(item: NomineeData) => {
+                            setSelected(item.id);
+                        }}
                     />
                 ))
-            }            
+            }
             </div>
         </div>
     )
